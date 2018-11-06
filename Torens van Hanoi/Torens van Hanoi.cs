@@ -273,21 +273,21 @@ namespace Torens_van_Hanoi
                 {
                     Temp = Stack2.Pop();
                 }
+            }
 
-                if (Coordinates.X > panel5.Location.X)
+            if (Coordinates.X > panel5.Location.X)
+            {
+                if (Stack3.Count == 0)
                 {
-                    if (Stack3.Count == 0)
-                    {
-                        MessageBox.Show("No disks available!");
-                    }
+                    MessageBox.Show("No disks available!");
+                }
 
-                    ++ClickCount;
+                ++ClickCount;
 
-                    if (Stack3.Count < 0)
-                    {
-                        Temp = Stack2.Pop();
-                    }
-                }                
+                if (Stack3.Count < 0)
+                {
+                    Temp = Stack3.Pop();
+                }                                
             }
         }        
 
@@ -318,6 +318,279 @@ namespace Torens_van_Hanoi
             }
 
             ClickCount = 0;
-        }                
+        }
+
+        void StackLocator()
+        {
+            if (Stack1.Count == 1 || Stack2.Count == 1 || Stack3.Count == 1)
+            {
+                if (Temp == 1)
+                {
+                    Disk1.Height = 41;/*
+                    Result = 7 - Temp;
+                    Width = Disk7.Width - (Result * 9);
+                    Disk1.Width = Width;*/                    
+                }
+
+                if (Temp == 2)
+                {
+                    Disk2.Height = 41;
+                }
+
+                if (Temp == 3)
+                {
+                    Disk3.Height = 41;
+                }
+
+                if (Temp == 4)
+                {
+                    Disk4.Height = 41;
+                }
+
+                if (Temp == 5)
+                {
+                    Disk5.Height = 41;
+                }
+
+                if (Temp == 6)
+                {
+                    Disk6.Height = 41;
+                }
+
+                if (Temp == 7)
+                {
+                    Disk7.Height = 41;
+                }
+
+            }
+
+            if (Stack1.Count == 2 || Stack2.Count == 2 || Stack3.Count == 2)
+            {
+                if (Temp == 1)
+                {
+                    Disk1.Height = 65;
+                }
+
+                if (Temp == 2)
+                {
+                    Disk2.Height = 65;
+                }
+
+                if (Temp == 3)
+                {
+                    Disk3.Height = 65;
+                }
+
+                if (Temp == 4)
+                {
+                    Disk4.Height = 65;
+                }
+
+                if (Temp == 5)
+                {
+                    Disk5.Height = 65;
+                }
+
+                if (Temp == 6)
+                {
+                    Disk6.Height = 65;
+                }
+
+                if (Temp == 7)
+                {
+                    Disk7.Height = 65;
+                }
+            }
+
+            if (Stack1.Count == 3 || Stack2.Count == 3 || Stack3.Count == 3)
+            {
+                if (Temp == 1)
+                {
+                    Disk1.Height = 89;
+                }
+
+                if (Temp == 2)
+                {
+                    Disk2.Height = 89;
+                }
+
+                if (Temp == 3)
+                {
+                    Disk3.Height = 89;
+                }
+
+                if (Temp == 4)
+                {
+                    Disk4.Height = 89;
+                }
+
+                if (Temp == 5)
+                {
+                    Disk5.Height = 89;
+                }
+
+                if (Temp == 6)
+                {
+                    Disk6.Height = 89;
+                }
+
+                if (Temp == 7)
+                {
+                    Disk7.Height = 89;
+                }
+            }
+
+            if (Stack1.Count == 4 || Stack2.Count == 4 || Stack3.Count == 4)
+            {
+                if (Temp == 1)
+                {
+                    Disk1.Height = 113;
+                }
+
+                if (Temp == 2)
+                {
+                    Disk2.Height = 113;
+                }
+
+                if (Temp == 3)
+                {
+                    Disk3.Height = 113;
+                }
+
+                if (Temp == 4)
+                {
+                    Disk4.Height = 113;
+                }
+
+                if (Temp == 5)
+                {
+                    Disk5.Height = 113;
+                }
+
+                if (Temp == 6)
+                {
+                    Disk6.Height = 113;
+                }
+
+                if (Temp == 7)
+                {
+                    Disk7.Height = 113;
+                }
+            }
+
+            if (Stack1.Count == 5 || Stack2.Count == 5 || Stack3.Count == 5)
+            {
+                if (Temp == 1)
+                {
+                    Disk1.Height = 137;
+                }
+
+                if (Temp == 2)
+                {
+                    Disk2.Height = 137;
+                }
+
+                if (Temp == 3)
+                {
+                    Disk3.Height = 137;
+                }
+
+                if (Temp == 4)
+                {
+                    Disk4.Height = 137;
+                }
+
+                if (Temp == 5)
+                {
+                    Disk5.Height = 137;
+                }
+
+                if (Temp == 6)
+                {
+                    Disk6.Height = 137;
+                }
+
+                if (Temp == 7)
+                {
+                    Disk7.Height = 137;
+                }
+            }
+
+            if (Stack1.Count == 6 || Stack2.Count == 6 || Stack3.Count == 6)
+            {
+                if (Temp == 1)
+                {
+                    Disk1.Height = 161;
+                }
+
+                if (Temp == 2)
+                {
+                    Disk2.Height = 161;
+                }
+
+                if (Temp == 3)
+                {
+                    Disk3.Height = 161;
+                }
+
+                if (Temp == 4)
+                {
+                    Disk4.Height = 161;
+                }
+
+                if (Temp == 5)
+                {
+                    Disk5.Height = 161;
+                }
+
+                if (Temp == 6)
+                {
+                    Disk6.Height = 161;
+                }
+
+                if (Temp == 7)
+                {
+                    Disk7.Height = 161;
+                }
+            }
+
+            if (Stack1.Count == 7 || Stack2.Count == 7 || Stack3.Count == 7)
+            {
+                if (Temp == 1)
+                {
+                    Disk1.Height = 185;
+                }
+
+                if (Temp == 2)
+                {
+                    Disk2.Height = 185;
+                }
+
+                if (Temp == 3)
+                {
+                    Disk3.Height = 185;
+                }
+
+                if (Temp == 4)
+                {
+                    Disk4.Height = 185;
+                }
+
+                if (Temp == 5)
+                {
+                    Disk5.Height = 185;
+                }
+
+                if (Temp == 6)
+                {
+                    Disk6.Height = 185;
+                }
+
+                if (Temp == 7)
+                {
+                    Disk7.Height = 185;
+                }
+            }
+        }
     }
 }
