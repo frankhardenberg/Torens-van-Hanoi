@@ -13,7 +13,6 @@ namespace Torens_van_Hanoi
     public partial class TorensvanHanoi : Form
     {
         Point Coordinates;
-        Point Coordinates2;
         int Count = 0;
         int ClickCount = 0;
         int Temp;
@@ -66,6 +65,11 @@ namespace Torens_van_Hanoi
             if (ClickCount == 0)
             {
                 SelectDisk();
+            }
+
+            else
+            {
+                MoveDisk();
             }
         }
 
@@ -191,9 +195,14 @@ namespace Torens_van_Hanoi
                     MessageBox.Show("Cannot place bigger disk on smaller disk!");
                 }
 
-                if (Stack1.Peek() > Stack3.Peek())
+                else if (Stack1.Peek() > Stack3.Peek())
                 {
                     MessageBox.Show("Cannot place bigger disk on smaller disk!");
+                }
+
+                else
+                {
+                    ValidMove = true;
                 }
             }
 
@@ -204,9 +213,14 @@ namespace Torens_van_Hanoi
                     MessageBox.Show("Cannot place bigger disk on smaller disk!");
                 }
 
-                if (Stack2.Peek() > Stack3.Peek())
+                else if (Stack2.Peek() > Stack3.Peek())
                 {
                     MessageBox.Show("Cannot place bigger disk on smaller disk!");
+                }
+
+                else
+                {
+                    ValidMove = true;
                 }
             }
 
@@ -217,9 +231,14 @@ namespace Torens_van_Hanoi
                     MessageBox.Show("Cannot place bigger disk on smaller disk!");
                 }
 
-                if (Stack3.Peek() > Stack2.Peek())
+                else if (Stack3.Peek() > Stack2.Peek())
                 {
                     MessageBox.Show("Cannot place bigger disk on smaller disk!");
+                }
+
+                else
+                {
+                    ValidMove = true;
                 }
             }
         }
@@ -238,11 +257,6 @@ namespace Torens_van_Hanoi
                 if (Stack1.Count > 0)
                 {
                     Temp = Stack1.Pop();
-
-                    if (ClickCount == 1)
-                    {                        
-                        MoveDisk();
-                    }
                 }
             }
 
@@ -258,11 +272,6 @@ namespace Torens_van_Hanoi
                 if (Stack2.Count < 0)
                 {
                     Temp = Stack2.Pop();
-
-                    if (ClickCount == 1)
-                    {
-                        MoveDisk();
-                    }
                 }
 
                 if (Coordinates.X > panel5.Location.X)
@@ -277,19 +286,13 @@ namespace Torens_van_Hanoi
                     if (Stack3.Count < 0)
                     {
                         Temp = Stack2.Pop();
-
-                        if (ClickCount == 1)
-                        {
-                            MoveDisk();
-                        }
                     }
                 }                
             }
-        }
+        }        
 
         void MoveDisk()
         {
-            Coordinates2 = this.PointToClient(Cursor.Position);
             MoveValidation();
 
             if (ValidMove == true)
@@ -299,17 +302,17 @@ namespace Torens_van_Hanoi
 
             MoveCounter.Text = "Moves: " + Count.ToString();
 
-            if (Coordinates2.X <= panel4.Location.X)
+            if (Coordinates.X <= panel4.Location.X)
             {
                 Stack1.Push(Temp);
             }
 
-            if (Coordinates2.X > panel4.Location.X && Coordinates.X <= panel5.Location.X)
+            if (Coordinates.X > panel4.Location.X && Coordinates.X <= panel5.Location.X)
             {
                 Stack2.Push(Temp);
             }
 
-            if (Coordinates2.X > panel5.Location.X)
+            if (Coordinates.X > panel5.Location.X)
             {
                 Stack3.Push(Temp);
             }
