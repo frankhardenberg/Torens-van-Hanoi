@@ -15,6 +15,7 @@ namespace Torens_van_Hanoi
         Point Coordinates;
         Point Coordinates2;
         int Count = 0;
+        int ClickCount = 0;
         int Temp;
         Stack<int> Stack1 = new Stack<int>();
         Stack<int> Stack2 = new Stack<int>();
@@ -29,31 +30,50 @@ namespace Torens_van_Hanoi
             AddToStack();
         }
 
+        private void Disk1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void Disk2_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void Disk3_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void Disk1_MouseDown(object sender, MouseEventArgs e) // Geld voor alle buttons.
+        {
+        }
+
+        private void panel1_DragEnter(object sender, DragEventArgs e) // Geld voor alle panels.
+        {
+        }
+
+        private void TorensvanHanoi_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Activate();
+            Coordinates = this.PointToClient(Cursor.Position);
+
+            if (ClickCount == 0)
+            {
+                SelectDisk();
+            }
+        }
+
         void AddToStack()
         {
-            if (Disk1.Location.X <= 104)
+            if (Disk7.Location.X <= 104)
             {
-                Stack1.Push(Convert.ToInt32(Disk1.Text));
-            }
-
-            if (Disk2.Location.X <= 104)
-            {
-                Stack1.Push(Convert.ToInt32(Disk2.Text));
-            }
-
-            if (Disk3.Location.X <= 104)
-            {
-                Stack1.Push(Convert.ToInt32(Disk3.Text));
-            }
-
-            if (Disk4.Location.X <= 104)
-            {
-                Stack1.Push(Convert.ToInt32(Disk4.Text));
-            }
-
-            if (Disk5.Location.X <= 104)
-            {
-                Stack1.Push(Convert.ToInt32(Disk5.Text));
+                Stack1.Push(Convert.ToInt32(Disk7.Text));
             }
 
             if (Disk6.Location.X <= 104)
@@ -61,39 +81,29 @@ namespace Torens_van_Hanoi
                 Stack1.Push(Convert.ToInt32(Disk6.Text));
             }
 
-            if (Disk7.Location.X <= 104)
+            if (Disk5.Location.X <= 104)
             {
-                Stack1.Push(Convert.ToInt32(Disk7.Text));            
+                Stack1.Push(Convert.ToInt32(Disk5.Text));
             }
 
-            if (Disk1.Location.X > 104 && Disk1.Location.X <= 292)
+            if (Disk4.Location.X <= 104)
             {
-                Stack2.Push(Convert.ToInt32(Disk1.Text));
+                Stack1.Push(Convert.ToInt32(Disk4.Text));
             }
 
-            if (Disk2.Location.X > 104 && Disk2.Location.X <= 292)
+            if (Disk3.Location.X <= 104)
             {
-                Stack2.Push(Convert.ToInt32(Disk2.Text));
+                Stack1.Push(Convert.ToInt32(Disk3.Text));
             }
 
-            if (Disk3.Location.X > 104 && Disk3.Location.X <= 292)
+            if (Disk2.Location.X <= 104)
             {
-                Stack2.Push(Convert.ToInt32(Disk3.Text));
+                Stack1.Push(Convert.ToInt32(Disk2.Text));
             }
 
-            if (Disk4.Location.X > 104 && Disk4.Location.X <= 292)
+            if (Disk1.Location.X <= 104)
             {
-                Stack2.Push(Convert.ToInt32(Disk4.Text));
-            }
-
-            if (Disk5.Location.X > 104 && Disk5.Location.X <= 292)
-            {
-                Stack2.Push(Convert.ToInt32(Disk5.Text));
-            }
-
-            if (Disk6.Location.X > 104 && Disk6.Location.X <= 292)
-            {
-                Stack2.Push(Convert.ToInt32(Disk6.Text));
+                Stack1.Push(Convert.ToInt32(Disk1.Text));            
             }
 
             if (Disk7.Location.X > 104 && Disk7.Location.X <= 292)
@@ -101,29 +111,39 @@ namespace Torens_van_Hanoi
                 Stack2.Push(Convert.ToInt32(Disk7.Text));
             }
 
-            if (Disk1.Location.X > 292)
+            if (Disk6.Location.X > 104 && Disk6.Location.X <= 292)
             {
-                Stack3.Push(Convert.ToInt32(Disk1.Text));
+                Stack2.Push(Convert.ToInt32(Disk6.Text));
             }
 
-            if (Disk2.Location.X > 292)
+            if (Disk5.Location.X > 104 && Disk5.Location.X <= 292)
             {
-                Stack3.Push(Convert.ToInt32(Disk2.Text));
+                Stack2.Push(Convert.ToInt32(Disk5.Text));
             }
 
-            if (Disk3.Location.X > 292)
+            if (Disk4.Location.X > 104 && Disk4.Location.X <= 292)
             {
-                Stack3.Push(Convert.ToInt32(Disk3.Text));
+                Stack2.Push(Convert.ToInt32(Disk4.Text));
             }
 
-            if (Disk4.Location.X > 292)
+            if (Disk3.Location.X > 104 && Disk3.Location.X <= 292)
             {
-                Stack3.Push(Convert.ToInt32(Disk4.Text));
+                Stack2.Push(Convert.ToInt32(Disk3.Text));
             }
 
-            if (Disk5.Location.X > 292)
+            if (Disk2.Location.X > 104 && Disk2.Location.X <= 292)
             {
-                Stack3.Push(Convert.ToInt32(Disk5.Text));
+                Stack2.Push(Convert.ToInt32(Disk2.Text));
+            }
+
+            if (Disk1.Location.X > 104 && Disk1.Location.X <= 292)
+            {
+                Stack2.Push(Convert.ToInt32(Disk1.Text));
+            }
+
+            if (Disk7.Location.X > 292)
+            {
+                Stack3.Push(Convert.ToInt32(Disk7.Text));
             }
 
             if (Disk6.Location.X > 292)
@@ -131,9 +151,29 @@ namespace Torens_van_Hanoi
                 Stack3.Push(Convert.ToInt32(Disk6.Text));
             }
 
-            if (Disk7.Location.X > 292)
+            if (Disk5.Location.X > 292)
             {
-                Stack3.Push(Convert.ToInt32(Disk7.Text));
+                Stack3.Push(Convert.ToInt32(Disk5.Text));
+            }
+
+            if (Disk4.Location.X > 292)
+            {
+                Stack3.Push(Convert.ToInt32(Disk4.Text));
+            }
+
+            if (Disk3.Location.X > 292)
+            {
+                Stack3.Push(Convert.ToInt32(Disk3.Text));
+            }
+
+            if (Disk2.Location.X > 292)
+            {
+                Stack3.Push(Convert.ToInt32(Disk2.Text));
+            }
+
+            if (Disk1.Location.X > 292)
+            {
+                Stack3.Push(Convert.ToInt32(Disk1.Text));
             }
         }
 
@@ -184,224 +224,97 @@ namespace Torens_van_Hanoi
             }
         }
 
-        private void Disk1_Click(object sender, EventArgs e)
+        void SelectDisk()
         {
-        }
-
-        private void Disk2_Click(object sender, EventArgs e)
-        {
-        }        
-
-        private void Disk3_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void Disk1_MouseDown(object sender, MouseEventArgs e) // Geld voor alle buttons.
-        {
-            
-        }
-
-        private void panel1_DragEnter(object sender, DragEventArgs e) // Geld voor alle panels.
-        {
-
-        }
-
-        private void TorensvanHanoi_MouseClick(object sender, MouseEventArgs e)
-        {
-            this.Activate();
-            Coordinates = this.PointToClient(Cursor.Position);
-            SelectDisk();
-
-            void SelectDisk()
+            if (Coordinates.X <= panel4.Location.X)
             {
-                int ClickCount = 0;
-
-                if (Coordinates.X <= 104)
+                if (Stack1.Count == 0)
                 {
-                    if (Stack1.Count == 0)
-                    {
-                        MessageBox.Show("No disks available!");
+                    MessageBox.Show("No disks available!");
+                }
+
+                ++ClickCount;
+
+                if (Stack1.Count > 0)
+                {
+                    Temp = Stack1.Pop();
+
+                    if (ClickCount == 1)
+                    {                        
+                        MoveDisk();
                     }
+                }
+            }
 
-                    if (Stack1.Count > 0)
+            if (Coordinates.X > panel4.Location.X && Coordinates.X <= panel5.Location.X)
+            {
+                if (Stack2.Count == 0)
+                {
+                    MessageBox.Show("No disks available!");
+                }
+
+                ++ClickCount;
+
+                if (Stack2.Count < 0)
+                {
+                    Temp = Stack2.Pop();
+
+                    if (ClickCount == 1)
                     {
-                        ++ClickCount;
-                        Temp = Stack1.Pop();
-
-                        if (ClickCount == 1)
-                        {
-                            Coordinates2 = this.PointToClient(Cursor.Position);
-                            MoveDisk();
-                        }
+                        MoveDisk();
                     }
                 }
 
-                if (Coordinates.X > 104 && Coordinates.X <= 292)
-                {
-                    if (Stack2.Count == 0)
-                    {
-                        MessageBox.Show("No disks available!");
-                    }
-
-                    if (Stack2.Count < 0)
-                    {
-                        ++ClickCount;
-                        Temp = Stack2.Pop();
-
-                        if (ClickCount == 1)
-                        {
-                            Coordinates2 = this.PointToClient(Cursor.Position);
-                            MoveDisk();
-                        }
-                    }                    
-                }
-
-                if (Coordinates.X > 292)
+                if (Coordinates.X > panel5.Location.X)
                 {
                     if (Stack3.Count == 0)
                     {
                         MessageBox.Show("No disks available!");
                     }
 
+                    ++ClickCount;
+
                     if (Stack3.Count < 0)
                     {
-                        ++ClickCount;
                         Temp = Stack2.Pop();
 
                         if (ClickCount == 1)
                         {
-                            Coordinates2 = this.PointToClient(Cursor.Position);
                             MoveDisk();
                         }
                     }
-                }
-            }
-
-            void MoveDisk()
-            {                
-                MoveValidation();
-
-                if (ValidMove == true)
-                {
-                    ++Count;
-                }
-                
-                MoveCounter.Text = "Moves: " + Count.ToString();
-
-                if (Coordinates.X <= 104)
-                {
-                    Stack1.Push(Temp);
-                }
-
-                if (Coordinates.X > 104 && Coordinates.X <= 292)
-                {
-                    Stack2.Push(Temp);
-                }
-
-                if (Coordinates.X > 292 && Coordinates.X <= 480)
-                {
-                    Stack3.Push(Temp);
-                }
-            }
-
-            /*if (Coordinates.X < panel1.Location.X)
-            {
-                if (Disk1.Location.X == 292)
-                {
-                    Disk1.Location = Disk1.Location;
-                }
-
-                else
-                {
-                    Disk1.Left -= 188;
-                }
-            }
-
-            if (Coordinates.X > panel1.Location.X && Coordinates.X < panel2.Location.X)
-            {
-                if (Disk1.Location.X == 480)
-                {
-                    Disk1.Left += 0;
-                }
-
-                else
-                {
-                    Disk1.Left += 188;
                 }                
             }
-
-            if (Coordinates.X > panel2.Location.X && Coordinates.X < panel3.Location.X || Coordinates.X > panel2.Location.X && Coordinates.X > panel3.Location.X)
-            {
-                if (Disk1.Location.X == 668)
-                {
-                    Disk1.Left += 0;
-                }
-
-                else
-                {
-                    Disk1.Left += 188;
-                }                
-            }
-
-            if (Coordinates.X > panel3.Location.X)
-            {
-                if (Disk1.Location.X == 668)
-                {
-                    Disk1.Left += 0;
-                }
-
-                else
-                {
-                    Disk1.Left += 188;
-                }
-            }*/
-
-            /*if (Coordinates.X < panel4.Location.X)
-            {
-                Disk1.Location = Disk1.Location;
-            }
-
-            if (Coordinates.X > panel4.Location.X && Coordinates.X < panel5.Location.X)
-            {
-                int i = 0;
-
-                if (i == 0)
-                {
-                    MoveDisk();
-                    i++;
-                }
-            }
-
-            if (Coordinates.X > panel5.Location.X)
-            {
-                int i = 0;
-
-                if (Disk1.Location.X == 480)
-                {
-                    
-                }
-
-                else
-                {
-                    for (i = 0; i < 2; i++)
-                    {
-                        MoveDisk();
-                    }
-
-                    if (i >= 2)
-                    {
-                        
-                    }
-                }                
-            }*/
         }
 
-        private void panel5_Paint(object sender, PaintEventArgs e)
+        void MoveDisk()
         {
-        }
+            Coordinates2 = this.PointToClient(Cursor.Position);
+            MoveValidation();
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-        }
+            if (ValidMove == true)
+            {
+                ++Count;
+            }
+
+            MoveCounter.Text = "Moves: " + Count.ToString();
+
+            if (Coordinates2.X <= panel4.Location.X)
+            {
+                Stack1.Push(Temp);
+            }
+
+            if (Coordinates2.X > panel4.Location.X && Coordinates.X <= panel5.Location.X)
+            {
+                Stack2.Push(Temp);
+            }
+
+            if (Coordinates2.X > panel5.Location.X)
+            {
+                Stack3.Push(Temp);
+            }
+
+            ClickCount = 0;
+        }                
     }
 }
