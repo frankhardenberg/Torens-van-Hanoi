@@ -47,10 +47,10 @@
             // 
             this.panel1.AllowDrop = true;
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel1.Location = new System.Drawing.Point(159, 50);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Location = new System.Drawing.Point(119, 41);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(12, 197);
+            this.panel1.Size = new System.Drawing.Size(9, 160);
             this.panel1.TabIndex = 0;
             this.panel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel1_DragEnter);
             // 
@@ -58,10 +58,10 @@
             // 
             this.panel2.AllowDrop = true;
             this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel2.Location = new System.Drawing.Point(409, 50);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(307, 41);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(12, 197);
+            this.panel2.Size = new System.Drawing.Size(9, 160);
             this.panel2.TabIndex = 1;
             this.panel2.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel1_DragEnter);
             // 
@@ -69,10 +69,10 @@
             // 
             this.panel3.AllowDrop = true;
             this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel3.Location = new System.Drawing.Point(659, 50);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Location = new System.Drawing.Point(494, 41);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(12, 197);
+            this.panel3.Size = new System.Drawing.Size(9, 160);
             this.panel3.TabIndex = 1;
             this.panel3.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel1_DragEnter);
             // 
@@ -80,10 +80,10 @@
             // 
             this.Disk1.BackColor = System.Drawing.Color.SpringGreen;
             this.Disk1.ForeColor = System.Drawing.Color.SpringGreen;
-            this.Disk1.Location = new System.Drawing.Point(139, 50);
-            this.Disk1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Disk1.Location = new System.Drawing.Point(104, 41);
+            this.Disk1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Disk1.Name = "Disk1";
-            this.Disk1.Size = new System.Drawing.Size(52, 25);
+            this.Disk1.Size = new System.Drawing.Size(39, 20);
             this.Disk1.TabIndex = 2;
             this.Disk1.Text = "1";
             this.Disk1.UseVisualStyleBackColor = false;
@@ -94,10 +94,10 @@
             // 
             this.Disk2.BackColor = System.Drawing.Color.SpringGreen;
             this.Disk2.ForeColor = System.Drawing.Color.SpringGreen;
-            this.Disk2.Location = new System.Drawing.Point(127, 80);
-            this.Disk2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Disk2.Location = new System.Drawing.Point(95, 65);
+            this.Disk2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Disk2.Name = "Disk2";
-            this.Disk2.Size = new System.Drawing.Size(76, 25);
+            this.Disk2.Size = new System.Drawing.Size(57, 20);
             this.Disk2.TabIndex = 3;
             this.Disk2.Text = "2";
             this.Disk2.UseVisualStyleBackColor = false;
@@ -108,10 +108,10 @@
             // 
             this.Disk3.BackColor = System.Drawing.Color.SpringGreen;
             this.Disk3.ForeColor = System.Drawing.Color.SpringGreen;
-            this.Disk3.Location = new System.Drawing.Point(115, 110);
-            this.Disk3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Disk3.Location = new System.Drawing.Point(86, 89);
+            this.Disk3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Disk3.Name = "Disk3";
-            this.Disk3.Size = new System.Drawing.Size(100, 25);
+            this.Disk3.Size = new System.Drawing.Size(75, 20);
             this.Disk3.TabIndex = 4;
             this.Disk3.Text = "3";
             this.Disk3.UseVisualStyleBackColor = false;
@@ -122,10 +122,10 @@
             // 
             this.Disk5.BackColor = System.Drawing.Color.SpringGreen;
             this.Disk5.ForeColor = System.Drawing.Color.SpringGreen;
-            this.Disk5.Location = new System.Drawing.Point(91, 169);
-            this.Disk5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Disk5.Location = new System.Drawing.Point(68, 137);
+            this.Disk5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Disk5.Name = "Disk5";
-            this.Disk5.Size = new System.Drawing.Size(148, 25);
+            this.Disk5.Size = new System.Drawing.Size(111, 20);
             this.Disk5.TabIndex = 5;
             this.Disk5.Text = "5";
             this.Disk5.UseVisualStyleBackColor = false;
@@ -135,10 +135,10 @@
             // 
             this.Disk4.BackColor = System.Drawing.Color.SpringGreen;
             this.Disk4.ForeColor = System.Drawing.Color.SpringGreen;
-            this.Disk4.Location = new System.Drawing.Point(103, 139);
-            this.Disk4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Disk4.Location = new System.Drawing.Point(77, 113);
+            this.Disk4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Disk4.Name = "Disk4";
-            this.Disk4.Size = new System.Drawing.Size(124, 25);
+            this.Disk4.Size = new System.Drawing.Size(93, 20);
             this.Disk4.TabIndex = 6;
             this.Disk4.Text = "4";
             this.Disk4.UseVisualStyleBackColor = false;
@@ -148,10 +148,10 @@
             // 
             this.Disk6.BackColor = System.Drawing.Color.SpringGreen;
             this.Disk6.ForeColor = System.Drawing.Color.SpringGreen;
-            this.Disk6.Location = new System.Drawing.Point(79, 198);
-            this.Disk6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Disk6.Location = new System.Drawing.Point(59, 161);
+            this.Disk6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Disk6.Name = "Disk6";
-            this.Disk6.Size = new System.Drawing.Size(172, 25);
+            this.Disk6.Size = new System.Drawing.Size(129, 20);
             this.Disk6.TabIndex = 7;
             this.Disk6.Text = "6";
             this.Disk6.UseVisualStyleBackColor = false;
@@ -161,10 +161,10 @@
             // 
             this.Disk7.BackColor = System.Drawing.Color.SpringGreen;
             this.Disk7.ForeColor = System.Drawing.Color.SpringGreen;
-            this.Disk7.Location = new System.Drawing.Point(67, 228);
-            this.Disk7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Disk7.Location = new System.Drawing.Point(50, 185);
+            this.Disk7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Disk7.Name = "Disk7";
-            this.Disk7.Size = new System.Drawing.Size(196, 25);
+            this.Disk7.Size = new System.Drawing.Size(147, 20);
             this.Disk7.TabIndex = 8;
             this.Disk7.Text = "7";
             this.Disk7.UseVisualStyleBackColor = false;
@@ -174,34 +174,37 @@
             // 
             this.MoveCounter.AutoSize = true;
             this.MoveCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MoveCounter.Location = new System.Drawing.Point(13, 13);
+            this.MoveCounter.Location = new System.Drawing.Point(10, 11);
+            this.MoveCounter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MoveCounter.Name = "MoveCounter";
-            this.MoveCounter.Size = new System.Drawing.Size(0, 25);
+            this.MoveCounter.Size = new System.Drawing.Size(0, 20);
             this.MoveCounter.TabIndex = 9;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel4.Location = new System.Drawing.Point(284, 0);
+            this.panel4.Location = new System.Drawing.Point(213, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1, 279);
+            this.panel4.Size = new System.Drawing.Size(1, 227);
             this.panel4.TabIndex = 10;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel5.Location = new System.Drawing.Point(534, 0);
+            this.panel5.Location = new System.Drawing.Point(400, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1, 279);
+            this.panel5.Size = new System.Drawing.Size(1, 227);
             this.panel5.TabIndex = 11;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // TorensvanHanoi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(852, 280);
+            this.ClientSize = new System.Drawing.Size(589, 228);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.MoveCounter);
@@ -215,7 +218,7 @@
             this.Controls.Add(this.Disk2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "TorensvanHanoi";
             this.Text = "Torens van Hanoi";
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TorensvanHanoi_MouseClick);
