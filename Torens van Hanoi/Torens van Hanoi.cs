@@ -60,12 +60,12 @@ namespace Torens_van_Hanoi
 
                 if (Coordinates.X > 104 && Coordinates.X <= 292)
                 {
-                    Disk1.Location = new Point(292, 100);
+                    Disk1.Location = new Point(292, 185);
                 }
 
                 if (Coordinates.X > 292 && Coordinates.X <= 480)
                 {
-                    Disk1.Location = new Point(480, 198);
+                    Disk1.Location = new Point(480, 185);
                 }
             }
 
