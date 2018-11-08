@@ -223,6 +223,7 @@
             this.Disk11.Name = "Disk11";
             this.Disk11.Size = new System.Drawing.Size(39, 20);
             this.Disk11.TabIndex = 12;
+            this.Disk11.Text = "1";
             this.Disk11.UseVisualStyleBackColor = false;
             this.Disk11.Visible = false;
             // 
@@ -235,6 +236,7 @@
             this.Disk33.Name = "Disk33";
             this.Disk33.Size = new System.Drawing.Size(75, 20);
             this.Disk33.TabIndex = 14;
+            this.Disk33.Text = "3";
             this.Disk33.UseVisualStyleBackColor = false;
             this.Disk33.Visible = false;
             // 
@@ -247,6 +249,7 @@
             this.Disk22.Name = "Disk22";
             this.Disk22.Size = new System.Drawing.Size(57, 20);
             this.Disk22.TabIndex = 13;
+            this.Disk22.Text = "2";
             this.Disk22.UseVisualStyleBackColor = false;
             this.Disk22.Visible = false;
             // 
@@ -259,6 +262,7 @@
             this.Disk77.Name = "Disk77";
             this.Disk77.Size = new System.Drawing.Size(147, 20);
             this.Disk77.TabIndex = 18;
+            this.Disk77.Text = "7";
             this.Disk77.UseVisualStyleBackColor = false;
             this.Disk77.Visible = false;
             // 
@@ -271,6 +275,7 @@
             this.Disk66.Name = "Disk66";
             this.Disk66.Size = new System.Drawing.Size(129, 20);
             this.Disk66.TabIndex = 17;
+            this.Disk66.Text = "6";
             this.Disk66.UseVisualStyleBackColor = false;
             this.Disk66.Visible = false;
             // 
@@ -283,6 +288,7 @@
             this.Disk44.Name = "Disk44";
             this.Disk44.Size = new System.Drawing.Size(93, 20);
             this.Disk44.TabIndex = 16;
+            this.Disk44.Text = "4";
             this.Disk44.UseVisualStyleBackColor = false;
             this.Disk44.Visible = false;
             // 
@@ -295,6 +301,7 @@
             this.Disk55.Name = "Disk55";
             this.Disk55.Size = new System.Drawing.Size(111, 20);
             this.Disk55.TabIndex = 15;
+            this.Disk55.Text = "5";
             this.Disk55.UseVisualStyleBackColor = false;
             this.Disk55.Visible = false;
             // 
