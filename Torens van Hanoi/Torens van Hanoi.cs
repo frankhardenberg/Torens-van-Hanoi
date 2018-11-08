@@ -26,7 +26,7 @@ namespace Torens_van_Hanoi
             InitializeComponent();
             this.Capture = true;
             MoveCounter.Text = "Moves: " + Count.ToString();
-            AddToStack();
+            StartStack();
         }
 
         private void Disk1_Click(object sender, EventArgs e)
@@ -73,7 +73,45 @@ namespace Torens_van_Hanoi
             }
         }
 
-        void AddToStack()
+        void StartStack()
+        {
+            if (Disk7.Location.X <= 104)
+            {
+                Stack1.Push(Convert.ToInt32(Disk7.Text));
+            }
+
+            if (Disk6.Location.X <= 104)
+            {
+                Stack1.Push(Convert.ToInt32(Disk6.Text));
+            }
+
+            if (Disk5.Location.X <= 104)
+            {
+                Stack1.Push(Convert.ToInt32(Disk5.Text));
+            }
+
+            if (Disk4.Location.X <= 104)
+            {
+                Stack1.Push(Convert.ToInt32(Disk4.Text));
+            }
+
+            if (Disk3.Location.X <= 104)
+            {
+                Stack1.Push(Convert.ToInt32(Disk3.Text));
+            }
+
+            if (Disk2.Location.X <= 104)
+            {
+                Stack1.Push(Convert.ToInt32(Disk2.Text));
+            }
+
+            if (Disk1.Location.X <= 104)
+            {
+                Stack1.Push(Convert.ToInt32(Disk1.Text));
+            }
+        }
+
+        /*void UpdateStack()
         {
             if (Disk7.Location.X <= 104)
             {
@@ -179,7 +217,7 @@ namespace Torens_van_Hanoi
             {
                 Stack3.Push(Convert.ToInt32(Disk1.Text));
             }
-        }
+        }*/
 
         void MoveValidation()
         {
@@ -190,7 +228,15 @@ namespace Torens_van_Hanoi
 
             if (Stack1.Count != 0 && Stack2.Count != 0)
             {
-                if (Stack1.Peek() == 0 || Stack2.Peek() == 0)
+                try
+                {
+                    if (Stack1.Peek() == 0 || Stack2.Peek() == 0)
+                    {
+
+                    }
+                }
+
+                catch (InvalidOperationException)
                 {
 
                 }
@@ -198,25 +244,40 @@ namespace Torens_van_Hanoi
                 if (Stack1.Peek() > Stack2.Peek())
                 {
                     MessageBox.Show("Cannot place bigger disk on smaller disk!");
-                }                
-            }
-
-            else if (Stack1.Count != 0 && Stack3.Count != 0)
-            {
-                if (Stack1.Peek() == 0 || Stack2.Peek() == 0)
-                {
-
                 }
 
-                if (Stack1.Peek() > Stack3.Peek())
+                else if (Stack1.Count != 0 && Stack3.Count != 0)
                 {
-                    MessageBox.Show("Cannot place bigger disk on smaller disk!");
+                    try
+                    {
+                        if (Stack1.Peek() == 0 || Stack3.Peek() == 0)
+                        {
+
+                        }
+                    }
+
+                    catch (InvalidOperationException)
+                    {
+
+                    }
+
+                    if (Stack1.Peek() > Stack3.Peek())
+                    {
+                        MessageBox.Show("Cannot place bigger disk on smaller disk!");
+                    }
                 }
             }
 
             if (Stack2.Count != 0 && Stack1.Count != 0)
             {
-                if (Stack2.Peek() == 0 || Stack1.Peek() == 0)
+                try
+                {
+                    if (Stack2.Peek() == 0 || Stack1.Peek() == 0)
+                    {
+
+                    }
+                }
+                catch (InvalidOperationException)
                 {
 
                 }
@@ -227,10 +288,16 @@ namespace Torens_van_Hanoi
                 }
             }
 
-
             else if (Stack2.Count != 0 && Stack3.Count != 0)
             {
-                if (Stack2.Peek() == 0 || Stack3.Peek() == 0)
+                try
+                {
+                    if (Stack2.Peek() == 0 || Stack3.Peek() == 0)
+                    {
+
+                    }
+                }
+                catch (InvalidOperationException)
                 {
 
                 }
@@ -243,7 +310,14 @@ namespace Torens_van_Hanoi
 
             if (Stack3.Count != 0 && Stack1.Count != 0)
             {
-                if (Stack3.Peek() == 0 || Stack1.Peek() == 0)
+                try
+                {
+                    if (Stack3.Peek() == 0 || Stack1.Peek() == 0)
+                    {
+
+                    }
+                }
+                catch (InvalidOperationException)
                 {
 
                 }
@@ -256,7 +330,14 @@ namespace Torens_van_Hanoi
 
             else if (Stack3.Count != 0 && Stack2.Count != 0)
             {
-                if (Stack3.Peek() == 0 || Stack2.Peek() == 0)
+                try
+                {
+                    if (Stack3.Peek() == 0 || Stack2.Peek() == 0)
+                    {
+
+                    }
+                }
+                catch (InvalidOperationException)
                 {
 
                 }
@@ -524,6 +605,7 @@ namespace Torens_van_Hanoi
                     }
 
                     Stack1.Push(Temp);
+                    //UpdateStack();
                     ClickCount = 0;
                 }
 
@@ -729,6 +811,7 @@ namespace Torens_van_Hanoi
                     }
 
                     Stack2.Push(Temp);
+                    //UpdateStack();
                     ClickCount = 0;
                 }
 
@@ -935,6 +1018,7 @@ namespace Torens_van_Hanoi
                 }
 
                 Stack3.Push(Temp);
+                //UpdateStack();
                 ClickCount = 0;
             }
         }        
