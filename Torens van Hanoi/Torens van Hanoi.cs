@@ -181,7 +181,7 @@ namespace Torens_van_Hanoi
             }
         }
 
-        void MoveValidation()
+        /*void MoveValidation()
         {
             if (Stack1.Count == 0 || Stack2.Count == 0 || Stack3.Count == 0)
             {
@@ -241,7 +241,7 @@ namespace Torens_van_Hanoi
                     ValidMove = true;
                 }
             }
-        }
+        }*/
 
         void SelectDisk()
         {
@@ -250,12 +250,11 @@ namespace Torens_van_Hanoi
                 if (Stack1.Count == 0)
                 {
                     MessageBox.Show("No disks available!");
-                }
-
-                ++ClickCount;
+                }                
 
                 if (Stack1.Count > 0)
                 {
+                    ++ClickCount;
                     Temp = Stack1.Pop();
                 }
             }
@@ -265,12 +264,11 @@ namespace Torens_van_Hanoi
                 if (Stack2.Count == 0)
                 {
                     MessageBox.Show("No disks available!");
-                }
-
-                ++ClickCount;
+                }                
 
                 if (Stack2.Count < 0)
                 {
+                    ++ClickCount;
                     Temp = Stack2.Pop();
                 }
             }
@@ -280,12 +278,11 @@ namespace Torens_van_Hanoi
                 if (Stack3.Count == 0)
                 {
                     MessageBox.Show("No disks available!");
-                }
-
-                ++ClickCount;
+                }                
 
                 if (Stack3.Count < 0)
                 {
+                    ++ClickCount;
                     Temp = Stack3.Pop();
                 }                                
             }
@@ -293,9 +290,9 @@ namespace Torens_van_Hanoi
 
         void MoveDisk()
         {
-            MoveValidation();
+            //MoveValidation();
 
-            if (ValidMove == true)
+            if (ValidMove != true) // terugzetten naar = true en movevalidation uncommenten
             {
                 ++Count;
             }
@@ -304,32 +301,627 @@ namespace Torens_van_Hanoi
 
             if (Coordinates.X <= panel4.Location.X)
             {
+                int Height = 185 - (Stack2.Count * 24);
+                int Width = 113 - (Temp * 9);
+
+                if (Stack1.Count == 0)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
+
+                if (Stack1.Count == 1)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
+
+                if (Stack1.Count == 2)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
+
+                if (Stack1.Count == 3)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
+
+                if (Stack1.Count == 4)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
+
+                if (Stack1.Count == 5)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
+
+                if (Stack1.Count == 6)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
+
                 Stack1.Push(Temp);
+                ClickCount = 0;
             }
 
             if (Coordinates.X > panel4.Location.X && Coordinates.X <= panel5.Location.X)
             {
+                int Height = 185 - (Stack2.Count * 24);
+                int Width = 301 - (Temp * 9);
+
+                if (Stack2.Count == 0)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
+
+                if (Stack2.Count == 1)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
+
+                if (Stack2.Count == 2)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
+
+                if (Stack2.Count == 3)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
+
+                if (Stack2.Count == 4)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
+
+                if (Stack2.Count == 5)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
+
+                if (Stack2.Count == 6)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
+
                 Stack2.Push(Temp);
+                ClickCount = 0;
             }
 
             if (Coordinates.X > panel5.Location.X)
             {
-                Stack3.Push(Temp);
+                int Height = 185 - (Stack3.Count * 24);
+                int Width = 489 - (Temp * 9);
+                
+                if (Stack3.Count == 0)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
+
+                if (Stack3.Count == 1)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
+
+                if (Stack3.Count == 2)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
+
+                if (Stack3.Count == 3)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
+
+                if (Stack3.Count == 4)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
+
+                if (Stack3.Count == 5)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
+
+                if (Stack3.Count == 6)
+                {
+                    switch (Temp)
+                    {
+                        case 1:
+                            Disk1.Location = new Point(Width, Height);
+                            break;
+                        case 2:
+                            Disk2.Location = new Point(Width, Height);
+                            break;
+                        case 3:
+                            Disk3.Location = new Point(Width, Height);
+                            break;
+                        case 4:
+                            Disk4.Location = new Point(Width, Height);
+                            break;
+                        case 5:
+                            Disk5.Location = new Point(Width, Height);
+                            break;
+                        case 6:
+                            Disk6.Location = new Point(Width, Height);
+                            break;
+                        case 7:
+                            Disk7.Location = new Point(Width, Height);
+                            break;
+                    }
+                }
             }
 
+            Stack3.Push(Temp);
             ClickCount = 0;
         }
 
-        void StackLocator()
+        /*void StackLocator()
         {
             if (Stack1.Count == 1 || Stack2.Count == 1 || Stack3.Count == 1)
             {
                 if (Temp == 1)
                 {
-                    Disk1.Height = 41;/*
-                    Result = 7 - Temp;
-                    Width = Disk7.Width - (Result * 9);
-                    Disk1.Width = Width;*/                    
+                    Disk1.Height = 41;                
                 }
 
                 if (Temp == 2)
@@ -361,7 +953,6 @@ namespace Torens_van_Hanoi
                 {
                     Disk7.Height = 41;
                 }
-
             }
 
             if (Stack1.Count == 2 || Stack2.Count == 2 || Stack3.Count == 2)
@@ -591,6 +1182,6 @@ namespace Torens_van_Hanoi
                     Disk7.Height = 185;
                 }
             }
-        }
+        }*/
     }
 }
