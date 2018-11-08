@@ -605,8 +605,6 @@ namespace Torens_van_Hanoi
                     }
 
                     Stack1.Push(Temp);
-                    //UpdateStack();
-                    ClickCount = 0;
                 }
 
                 if (Coordinates.X > panel4.Location.X && Coordinates.X <= panel5.Location.X)
@@ -811,8 +809,6 @@ namespace Torens_van_Hanoi
                     }
 
                     Stack2.Push(Temp);
-                    //UpdateStack();
-                    ClickCount = 0;
                 }
 
                 if (Coordinates.X > panel5.Location.X)
@@ -1015,10 +1011,10 @@ namespace Torens_van_Hanoi
                                 break;
                         }
                     }
+
+                    Stack3.Push(Temp);
                 }
 
-                Stack3.Push(Temp);
-                //UpdateStack();
                 ClickCount = 0;
             }
         }        
