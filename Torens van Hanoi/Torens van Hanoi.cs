@@ -111,7 +111,7 @@ namespace Torens_van_Hanoi
             }
         }
 
-        /*void UpdateStack()
+        void UpdateStack()
         {
             if (Disk7.Location.X <= 104)
             {
@@ -145,7 +145,7 @@ namespace Torens_van_Hanoi
 
             if (Disk1.Location.X <= 104)
             {
-                Stack1.Push(Convert.ToInt32(Disk1.Text));            
+                Stack1.Push(Convert.ToInt32(Disk1.Text));
             }
 
             if (Disk7.Location.X > 104 && Disk7.Location.X <= 292)
@@ -217,11 +217,11 @@ namespace Torens_van_Hanoi
             {
                 Stack3.Push(Convert.ToInt32(Disk1.Text));
             }
-        }*/
+        }
 
         void MoveValidation()
         {
-            if (Stack1.Count == 0 || Stack2.Count == 0 || Stack3.Count == 0)
+            if (Stack1.Count == 0 && Coordinates.X < 104 || Stack2.Count == 0 && Coordinates.X >= 104 && Coordinates.X < 292 || Stack3.Count == 0 && Coordinates.X >= 292)
             {
                 ValidMove = true;
             }
@@ -232,7 +232,7 @@ namespace Torens_van_Hanoi
                 {
                     if (Stack1.Peek() == 0 || Stack2.Peek() == 0)
                     {
-
+                        MessageBox.Show("No disks available!");
                     }
                 }
 
@@ -244,27 +244,31 @@ namespace Torens_van_Hanoi
                 if (Stack1.Peek() > Stack2.Peek())
                 {
                     MessageBox.Show("Cannot place bigger disk on smaller disk!");
+                    ClickCount = 0;
+                    return;
+                }                
+            }
+
+            else if (Stack1.Count != 0 && Stack3.Count != 0)
+            {
+                try
+                {                    
+                    if (Stack1.Peek() == 0 || Stack3.Peek() == 0)
+                    {
+                        MessageBox.Show("No disks available!");
+                    }
                 }
 
-                else if (Stack1.Count != 0 && Stack3.Count != 0)
+                catch (InvalidOperationException)
                 {
-                    try
-                    {
-                        if (Stack1.Peek() == 0 || Stack3.Peek() == 0)
-                        {
 
-                        }
-                    }
+                }
 
-                    catch (InvalidOperationException)
-                    {
-
-                    }
-
-                    if (Stack1.Peek() > Stack3.Peek())
-                    {
-                        MessageBox.Show("Cannot place bigger disk on smaller disk!");
-                    }
+                if (Stack1.Peek() > Stack3.Peek())
+                {
+                    MessageBox.Show("Cannot place bigger disk on smaller disk!");
+                    ClickCount = 0;
+                    return;
                 }
             }
 
@@ -274,7 +278,7 @@ namespace Torens_van_Hanoi
                 {
                     if (Stack2.Peek() == 0 || Stack1.Peek() == 0)
                     {
-
+                        MessageBox.Show("No disks available!");
                     }
                 }
                 catch (InvalidOperationException)
@@ -285,6 +289,8 @@ namespace Torens_van_Hanoi
                 if (Stack2.Peek() > Stack1.Peek())
                 {
                     MessageBox.Show("Cannot place bigger disk on smaller disk!");
+                    ClickCount = 0;
+                    return;
                 }
             }
 
@@ -305,6 +311,8 @@ namespace Torens_van_Hanoi
                 if (Stack2.Peek() > Stack3.Peek())
                 {
                     MessageBox.Show("Cannot place bigger disk on smaller disk!");
+                    ClickCount = 0;
+                    return;
                 }
             }
 
@@ -325,6 +333,8 @@ namespace Torens_van_Hanoi
                 if (Stack3.Peek() > Stack1.Peek())
                 {
                     MessageBox.Show("Cannot place bigger disk on smaller disk!");
+                    ClickCount = 0;
+                    return;
                 }
             }
 
@@ -345,8 +355,10 @@ namespace Torens_van_Hanoi
                 if (Stack3.Peek() > Stack2.Peek())
                 {
                     MessageBox.Show("Cannot place bigger disk on smaller disk!");
+                    ClickCount = 0;
+                    return;
                 }
-            }           
+            }
         }
 
         void SelectDisk()
@@ -403,7 +415,7 @@ namespace Torens_van_Hanoi
                 ++Count;
                 MoveCounter.Text = "Moves: " + Count.ToString();
 
-                if (Coordinates.X <= panel4.Location.X)
+                if (Coordinates.X <= panel4.Location.X && ValidMove == true)
                 {
                     int Height = 185 - (Stack2.Count * 24);
                     int Width = 113 - (Temp * 9);
@@ -607,7 +619,7 @@ namespace Torens_van_Hanoi
                     Stack1.Push(Temp);
                 }
 
-                if (Coordinates.X > panel4.Location.X && Coordinates.X <= panel5.Location.X)
+                if (Coordinates.X > panel4.Location.X && Coordinates.X <= panel5.Location.X && ValidMove == true)
                 {
                     int Height = 209 - (Temp * 24);
                     int Width = 301 - (Temp * 9);
@@ -811,7 +823,7 @@ namespace Torens_van_Hanoi
                     Stack2.Push(Temp);
                 }
 
-                if (Coordinates.X > panel5.Location.X)
+                if (Coordinates.X > panel5.Location.X && ValidMove == true)
                 {
                     int Height = 185 - (Stack3.Count * 24);
                     int Width = 489 - (Temp * 9);
@@ -1013,9 +1025,9 @@ namespace Torens_van_Hanoi
                     }
 
                     Stack3.Push(Temp);
+                    ClickCount = 0;
+                    ValidMove = false;
                 }
-
-                ClickCount = 0;
             }
         }        
     }
