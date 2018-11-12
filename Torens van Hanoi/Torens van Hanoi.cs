@@ -26,51 +26,7 @@ namespace Torens_van_Hanoi
             InitializeComponent();
             this.Capture = true;
             MoveCounter.Text = "Moves: " + Count.ToString();
-            StartStack();
-        }
-
-        private void Disk1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void Disk2_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void Disk3_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void Disk1_MouseDown(object sender, MouseEventArgs e) // Geld voor alle buttons.
-        {
-        }
-
-        private void panel1_DragEnter(object sender, DragEventArgs e) // Geld voor alle panels.
-        {
-        }
-
-        private void TorensvanHanoi_MouseClick(object sender, MouseEventArgs e)
-        {
-            this.Activate();
-            Coordinates = this.PointToClient(Cursor.Position);
-
-            if (ClickCount == 0)
-            {
-                SelectDisk();
-            }
-
-            else
-            {
-                MoveDisk();
-            }
+            StartStack();           
         }
 
         void StartStack()
@@ -109,115 +65,159 @@ namespace Torens_van_Hanoi
             {
                 Stack1.Push(Convert.ToInt32(Disk1.Text));
             }
-        }
+        }        
 
-        void UpdateStack()
+        private void Disk1_Click(object sender, EventArgs e)
         {
-            if (Disk7.Location.X <= 104)
-            {
-                Stack1.Push(Convert.ToInt32(Disk7.Text));
-            }
-
-            if (Disk6.Location.X <= 104)
-            {
-                Stack1.Push(Convert.ToInt32(Disk6.Text));
-            }
-
-            if (Disk5.Location.X <= 104)
-            {
-                Stack1.Push(Convert.ToInt32(Disk5.Text));
-            }
-
-            if (Disk4.Location.X <= 104)
-            {
-                Stack1.Push(Convert.ToInt32(Disk4.Text));
-            }
-
-            if (Disk3.Location.X <= 104)
-            {
-                Stack1.Push(Convert.ToInt32(Disk3.Text));
-            }
-
-            if (Disk2.Location.X <= 104)
-            {
-                Stack1.Push(Convert.ToInt32(Disk2.Text));
-            }
-
-            if (Disk1.Location.X <= 104)
-            {
-                Stack1.Push(Convert.ToInt32(Disk1.Text));
-            }
-
-            if (Disk7.Location.X > 104 && Disk7.Location.X <= 292)
-            {
-                Stack2.Push(Convert.ToInt32(Disk7.Text));
-            }
-
-            if (Disk6.Location.X > 104 && Disk6.Location.X <= 292)
-            {
-                Stack2.Push(Convert.ToInt32(Disk6.Text));
-            }
-
-            if (Disk5.Location.X > 104 && Disk5.Location.X <= 292)
-            {
-                Stack2.Push(Convert.ToInt32(Disk5.Text));
-            }
-
-            if (Disk4.Location.X > 104 && Disk4.Location.X <= 292)
-            {
-                Stack2.Push(Convert.ToInt32(Disk4.Text));
-            }
-
-            if (Disk3.Location.X > 104 && Disk3.Location.X <= 292)
-            {
-                Stack2.Push(Convert.ToInt32(Disk3.Text));
-            }
-
-            if (Disk2.Location.X > 104 && Disk2.Location.X <= 292)
-            {
-                Stack2.Push(Convert.ToInt32(Disk2.Text));
-            }
-
-            if (Disk1.Location.X > 104 && Disk1.Location.X <= 292)
-            {
-                Stack2.Push(Convert.ToInt32(Disk1.Text));
-            }
-
-            if (Disk7.Location.X > 292)
-            {
-                Stack3.Push(Convert.ToInt32(Disk7.Text));
-            }
-
-            if (Disk6.Location.X > 292)
-            {
-                Stack3.Push(Convert.ToInt32(Disk6.Text));
-            }
-
-            if (Disk5.Location.X > 292)
-            {
-                Stack3.Push(Convert.ToInt32(Disk5.Text));
-            }
-
-            if (Disk4.Location.X > 292)
-            {
-                Stack3.Push(Convert.ToInt32(Disk4.Text));
-            }
-
-            if (Disk3.Location.X > 292)
-            {
-                Stack3.Push(Convert.ToInt32(Disk3.Text));
-            }
-
-            if (Disk2.Location.X > 292)
-            {
-                Stack3.Push(Convert.ToInt32(Disk2.Text));
-            }
-
-            if (Disk1.Location.X > 292)
-            {
-                Stack3.Push(Convert.ToInt32(Disk1.Text));
-            }
         }
+
+        private void Disk2_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void Disk3_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void Disk1_MouseDown(object sender, MouseEventArgs e) // Geld voor alle buttons.
+        {
+        }
+
+        private void panel1_DragEnter(object sender, DragEventArgs e) // Geld voor alle panels.
+        {
+        }
+
+        private void TorensvanHanoi_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Activate();
+            Coordinates = this.PointToClient(Cursor.Position);           
+
+            if (ClickCount == 0)
+            {
+                SelectDisk();                
+            }
+
+            else
+            {
+                MoveDisk();
+            }
+        }        
+
+        //void updatestack()
+        //{
+        //    if (disk7.location.x <= 104)
+        //    {
+        //        stack1.push(convert.toint32(disk7.text));
+        //    }
+
+        //    if (disk6.location.x <= 104)
+        //    {
+        //        stack1.push(convert.toint32(disk6.text));
+        //    }
+
+        //    if (disk5.location.x <= 104)
+        //    {
+        //        stack1.push(convert.toint32(disk5.text));
+        //    }
+
+        //    if (disk4.location.x <= 104)
+        //    {
+        //        stack1.push(convert.toint32(disk4.text));
+        //    }
+
+        //    if (disk3.location.x <= 104)
+        //    {
+        //        stack1.push(convert.toint32(disk3.text));
+        //    }
+
+        //    if (disk2.location.x <= 104)
+        //    {
+        //        stack1.push(convert.toint32(disk2.text));
+        //    }
+
+        //    if (disk1.location.x <= 104)
+        //    {
+        //        stack1.push(convert.toint32(disk1.text));
+        //    }
+
+        //    if (disk7.location.x > 104 && disk7.location.x <= 292)
+        //    {
+        //        stack2.push(convert.toint32(disk7.text));
+        //    }
+
+        //    if (disk6.location.x > 104 && disk6.location.x <= 292)
+        //    {
+        //        stack2.push(convert.toint32(disk6.text));
+        //    }
+
+        //    if (disk5.location.x > 104 && disk5.location.x <= 292)
+        //    {
+        //        stack2.push(convert.toint32(disk5.text));
+        //    }
+
+        //    if (disk4.location.x > 104 && disk4.location.x <= 292)
+        //    {
+        //        stack2.push(convert.toint32(disk4.text));
+        //    }
+
+        //    if (disk3.location.x > 104 && disk3.location.x <= 292)
+        //    {
+        //        stack2.push(convert.toint32(disk3.text));
+        //    }
+
+        //    if (disk2.location.x > 104 && disk2.location.x <= 292)
+        //    {
+        //        stack2.push(convert.toint32(disk2.text));
+        //    }
+
+        //    if (disk1.location.x > 104 && disk1.location.x <= 292)
+        //    {
+        //        stack2.push(convert.toint32(disk1.text));
+        //    }
+
+        //    if (disk7.location.x > 292)
+        //    {
+        //        stack3.push(convert.toint32(disk7.text));
+        //    }
+
+        //    if (disk6.location.x > 292)
+        //    {
+        //        stack3.push(convert.toint32(disk6.text));
+        //    }
+
+        //    if (disk5.location.x > 292)
+        //    {
+        //        stack3.push(convert.toint32(disk5.text));
+        //    }
+
+        //    if (disk4.location.x > 292)
+        //    {
+        //        stack3.push(convert.toint32(disk4.text));
+        //    }
+
+        //    if (disk3.location.x > 292)
+        //    {
+        //        stack3.push(convert.toint32(disk3.text));
+        //    }
+
+        //    if (disk2.location.x > 292)
+        //    {
+        //        stack3.push(convert.toint32(disk2.text));
+        //    }
+
+        //    if (disk1.location.x > 292)
+        //    {
+        //        stack3.push(convert.toint32(disk1.text));
+        //    }
+        //}
 
         void MoveValidation()
         {
