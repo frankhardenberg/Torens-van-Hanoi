@@ -182,7 +182,7 @@ namespace Torens_van_Hanoi
         void SelectDisk()
         {
             Coordinates = this.PointToClient(Cursor.Position);
-            SelectCoordinates = Coordinates;
+            SelectCoordinates = Coordinates; //Dit moet elke select opnieuw bepaald worden.
             CheckForDisks();
 
             if (SelectCoordinates.X <= panel4.Location.X)
@@ -216,7 +216,7 @@ namespace Torens_van_Hanoi
         void MoveDisk()
         {
             Coordinates = this.PointToClient(Cursor.Position);
-            MoveCoordinates = Coordinates;
+            MoveCoordinates = Coordinates; //Dit moet elke move opnieuw bepaald worden.
             MoveValidation();
 
             if (ValidMove == true)
