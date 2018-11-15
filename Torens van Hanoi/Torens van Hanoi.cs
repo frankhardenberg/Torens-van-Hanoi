@@ -22,7 +22,7 @@ namespace Torens_van_Hanoi
         Stack<int> Stack2 = new Stack<int>();
         Stack<int> Stack3 = new Stack<int>();
         Stack<int>[] Stacks;
-        bool ValidMove = false;
+        bool ValidMove = true;
 
         public TorensvanHanoi()
         {
@@ -73,11 +73,11 @@ namespace Torens_van_Hanoi
         
         private void TorensvanHanoi_MouseClick(object sender, MouseEventArgs e)
         {
-            this.Activate();                       
+            this.Activate();
 
             if (ClickCount == 0)
             {
-                SelectDisk();                
+                SelectDisk();
             }
 
             else
@@ -88,42 +88,38 @@ namespace Torens_van_Hanoi
         
         void CheckForDisks()
         {
-            if (SelectCoordinates.X <= panel4.Location.X)
+            if (SelectCoordinates.X <= panel4.Location.X && Stack1.Count == 0)
             {
-                if (Stack1.Count == 0)
-                {
-                    MessageBox.Show("No disks available!");
-                    ValidMove = false;
-                    ClickCount = 0;
-                }
+                MessageBox.Show("No disks available!");
+                ValidMove = false;
+                ClickCount = 0;
             }
 
-            if (SelectCoordinates.X > panel4.Location.X && SelectCoordinates.X <= panel5.Location.X)
+            if (SelectCoordinates.X > panel4.Location.X && SelectCoordinates.X <= panel5.Location.X && Stack2.Count == 0)
             {
-                if (Stack2.Count == 0)
-                {
                     MessageBox.Show("No disks available!");
                     ValidMove = false;
-                    ClickCount = 0;
-                }
+                    ClickCount = 0;                
             }
 
-            if (SelectCoordinates.X > panel5.Location.X)
+            if (SelectCoordinates.X > panel5.Location.X && Stack3.Count == 0)
             {
-                if (Stack3.Count == 0)
-                {
                     MessageBox.Show("No disks available!");
                     ValidMove = false;
                     ClickCount = 0;
-                }
-            }           
+            }
+        }
+
+        void UpdateStacks()
+        {
+            Stacks = new Stack<int>[] { Stack1, Stack2, Stack3 };
         }
 
         void MoveValidation()
         {
-            if (Stack1.Count == 0 && MoveCoordinates.X < 104 || Stack2.Count == 0 && MoveCoordinates.X >= 104 && MoveCoordinates.X < 292 || Stack3.Count == 0 && MoveCoordinates.X >= 292)
+            if (Stack1.Count >= 0) //(Stack1.Count == 0 && MoveCoordinates.X < panel4.Location.X || Stack2.Count == 0 && MoveCoordinates.X >= panel4.Location.X && MoveCoordinates.X < panel5.Location.X || Stack3.Count == 0 && MoveCoordinates.X >= panel5.Location.X)
             {
-                ValidMove = true;
+                //Zorgen dat al het overige op true blijft staan.
             }
 
             else
@@ -137,10 +133,10 @@ namespace Torens_van_Hanoi
                             if (Stacks[x].Count != 0 && Stacks[i].Peek() > Stacks[x].Peek())
                             {
                                 MessageBox.Show("Cannot place bigger disk on smaller disk!");
-                                ValidMove = false;
                                 ClickCount = 0;
+                                ValidMove = false;
                                 return;
-                            }
+                            }                            
                         }
                     }
                 }
@@ -151,15 +147,17 @@ namespace Torens_van_Hanoi
         {
             Coordinates = this.PointToClient(Cursor.Position);
             Console.WriteLine(Coordinates + "SelectDisk");
-            SelectCoordinates = Coordinates; //Dit moet elke select opnieuw bepaald worden.
+            SelectCoordinates = Coordinates;
             CheckForDisks();
+            Console.WriteLine(ClickCount);
 
             if (SelectCoordinates.X <= panel4.Location.X)
             {
                 if (Stack1.Count > 0)
                 {
-                    ++ClickCount;
                     Temp = Stack1.Pop();
+                    //Console.WriteLine(Stack1.Count);
+                    UpdateStacks();
                 }
             }
 
@@ -167,8 +165,9 @@ namespace Torens_van_Hanoi
             {
                 if (Stack2.Count < 0)
                 {
-                    ++ClickCount;
                     Temp = Stack2.Pop();
+                    //Console.WriteLine(Stack2.Count);
+                    UpdateStacks();
                 }
             }
 
@@ -176,17 +175,20 @@ namespace Torens_van_Hanoi
             {
                 if (Stack3.Count < 0)
                 {
-                    ++ClickCount;
                     Temp = Stack3.Pop();
+                    //Console.WriteLine(Stack3.Count);
+                    UpdateStacks();
                 }                                
             }
+
+            ClickCount++;
         }
 
         void MoveDisk()
         {
             Coordinates = this.PointToClient(Cursor.Position);
             Console.WriteLine(Coordinates + "MoveDisk");
-            MoveCoordinates = Coordinates;  //Dit moet elke move opnieuw bepaald worden.
+            MoveCoordinates = Coordinates;
             MoveValidation();
 
             if (ValidMove == true)
@@ -194,7 +196,7 @@ namespace Torens_van_Hanoi
                 ++Count;
                 MoveCounter.Text = "Moves: " + Count.ToString();
 
-                if (MoveCoordinates.X <= panel4.Location.X && ValidMove == true)
+                if (MoveCoordinates.X <= panel4.Location.X && ValidMove == true) //Is && Validmove == true wel nodig hier?
                 {
                     int Height = 185 - (Stack1.Count * 24);
                     int Width = 113 - (Temp * 9);
@@ -231,8 +233,11 @@ namespace Torens_van_Hanoi
                     }                    
                     
                     Stack1.Push(Temp);
+                    //Console.WriteLine(Stack1.Count);
+                    //UpdateStacks();
                     ClickCount = 0;
-                    ValidMove = false;
+                    Console.WriteLine(ClickCount);
+                    //ValidMove = false;
                 }
 
                 if (MoveCoordinates.X > panel4.Location.X && MoveCoordinates.X <= panel5.Location.X && ValidMove == true)
@@ -272,8 +277,11 @@ namespace Torens_van_Hanoi
                     }
                     
                     Stack2.Push(Temp);
+                    //Console.WriteLine(Stack2.Count);
+                    //UpdateStacks();
                     ClickCount = 0;
-                    ValidMove = false;
+                    Console.WriteLine(ClickCount);
+                    //ValidMove = false;
                 }
 
                 if (MoveCoordinates.X > panel5.Location.X && ValidMove == true)
@@ -288,7 +296,7 @@ namespace Torens_van_Hanoi
                             switch (Temp)
                             {
                                 case 1:
-                                    Disk1.Location = new Point(Width, Height);
+                                    Disk1.Location = new Point(Width, Height);                                                                      
                                     break;
                                 case 2:
                                     Disk2.Location = new Point(Width, Height);
@@ -313,12 +321,15 @@ namespace Torens_van_Hanoi
                     }                    
 
                     Stack3.Push(Temp);
+                    //Console.WriteLine(Stack3.Count);
+                    //UpdateStacks();
                     ClickCount = 0;
-                    ValidMove = false;
+                    Console.WriteLine(ClickCount);
+                    //ValidMove = false;
                 }
             }
 
-            if (Stack3.Count == 8)
+            if (Stack3.Count == 7)
             {
                 MessageBox.Show("Congratulations! You won!");
             }
