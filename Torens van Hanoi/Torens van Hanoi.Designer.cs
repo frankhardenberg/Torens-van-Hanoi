@@ -66,7 +66,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(9, 160);
             this.panel1.TabIndex = 0;
-            this.panel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel1_DragEnter);
             // 
             // panel2
             // 
@@ -77,7 +76,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(9, 160);
             this.panel2.TabIndex = 1;
-            this.panel2.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel1_DragEnter);
             // 
             // panel3
             // 
@@ -88,7 +86,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(9, 160);
             this.panel3.TabIndex = 1;
-            this.panel3.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel1_DragEnter);
             // 
             // Disk1
             // 
@@ -101,8 +98,6 @@
             this.Disk1.TabIndex = 2;
             this.Disk1.Text = "1";
             this.Disk1.UseVisualStyleBackColor = false;
-            this.Disk1.Click += new System.EventHandler(this.Disk1_Click);
-            this.Disk1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Disk1_MouseDown);
             // 
             // Disk2
             // 
@@ -115,8 +110,6 @@
             this.Disk2.TabIndex = 3;
             this.Disk2.Text = "2";
             this.Disk2.UseVisualStyleBackColor = false;
-            this.Disk2.Click += new System.EventHandler(this.Disk2_Click);
-            this.Disk2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Disk1_MouseDown);
             // 
             // Disk3
             // 
@@ -129,8 +122,6 @@
             this.Disk3.TabIndex = 4;
             this.Disk3.Text = "3";
             this.Disk3.UseVisualStyleBackColor = false;
-            this.Disk3.Click += new System.EventHandler(this.Disk3_Click);
-            this.Disk3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Disk1_MouseDown);
             // 
             // Disk5
             // 
@@ -143,7 +134,6 @@
             this.Disk5.TabIndex = 5;
             this.Disk5.Text = "5";
             this.Disk5.UseVisualStyleBackColor = false;
-            this.Disk5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Disk1_MouseDown);
             // 
             // Disk4
             // 
@@ -156,7 +146,6 @@
             this.Disk4.TabIndex = 6;
             this.Disk4.Text = "4";
             this.Disk4.UseVisualStyleBackColor = false;
-            this.Disk4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Disk1_MouseDown);
             // 
             // Disk6
             // 
@@ -169,7 +158,6 @@
             this.Disk6.TabIndex = 7;
             this.Disk6.Text = "6";
             this.Disk6.UseVisualStyleBackColor = false;
-            this.Disk6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Disk1_MouseDown);
             // 
             // Disk7
             // 
@@ -182,7 +170,6 @@
             this.Disk7.TabIndex = 8;
             this.Disk7.Text = "7";
             this.Disk7.UseVisualStyleBackColor = false;
-            this.Disk7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Disk1_MouseDown);
             // 
             // MoveCounter
             // 
@@ -202,7 +189,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1, 227);
             this.panel4.TabIndex = 10;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // panel5
             // 
@@ -212,7 +198,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1, 227);
             this.panel5.TabIndex = 11;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // Disk11
             // 

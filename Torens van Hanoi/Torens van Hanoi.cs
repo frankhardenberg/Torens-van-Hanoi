@@ -70,35 +70,7 @@ namespace Torens_van_Hanoi
                 Stack1.Push(Convert.ToInt32(Disk1.Text));
             }
         }        
-
-        private void Disk1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void Disk2_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void Disk3_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void Disk1_MouseDown(object sender, MouseEventArgs e) // Geld voor alle buttons.
-        {
-        }
-
-        private void panel1_DragEnter(object sender, DragEventArgs e) // Geld voor alle panels.
-        {
-        }
-
+        
         private void TorensvanHanoi_MouseClick(object sender, MouseEventArgs e)
         {
             this.Activate();                       
@@ -154,13 +126,13 @@ namespace Torens_van_Hanoi
                 ValidMove = true;
             }
 
-            for (int i = 0; i < Stacks.Length;i++)
+            else
             {
-                for (int x = 0; x < Stacks.Length; x++)
+                for (int i = 0; i < Stacks.Length; i++)
                 {
-                    if (x != i)
+                    for (int x = 0; x < Stacks.Length; x++)
                     {
-                        try
+                        if (x != i)
                         {
                             if (Stacks[x].Count != 0 && Stacks[i].Peek() > Stacks[x].Peek())
                             {
@@ -170,18 +142,15 @@ namespace Torens_van_Hanoi
                                 return;
                             }
                         }
-
-                        catch
-                        {
-                        }                        
                     }
                 }
-            }            
+            }                      
         }
 
         void SelectDisk()
         {
             Coordinates = this.PointToClient(Cursor.Position);
+            Console.WriteLine(Coordinates + "SelectDisk");
             SelectCoordinates = Coordinates; //Dit moet elke select opnieuw bepaald worden.
             CheckForDisks();
 
@@ -216,7 +185,8 @@ namespace Torens_van_Hanoi
         void MoveDisk()
         {
             Coordinates = this.PointToClient(Cursor.Position);
-            MoveCoordinates = Coordinates; //Dit moet elke move opnieuw bepaald worden.
+            Console.WriteLine(Coordinates + "MoveDisk");
+            MoveCoordinates = Coordinates;  //Dit moet elke move opnieuw bepaald worden.
             MoveValidation();
 
             if (ValidMove == true)
