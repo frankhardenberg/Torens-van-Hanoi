@@ -127,44 +127,98 @@ namespace Torens_van_Hanoi
 
         void MoveValidation()
         {
-            //if (Stack1.Count < 0) //(Stack1.Count == 0 && MoveCoordinates.X < panel4.Location.X || Stack2.Count == 0 && MoveCoordinates.X >= panel4.Location.X && MoveCoordinates.X < panel5.Location.X || Stack3.Count == 0 && MoveCoordinates.X >= panel5.Location.X)
-            //{
-                //Zorgen dat al het overige op true blijft staan.
-            //}
-
-            /*if (Stack1.Count > 7 || Stack2.Count > 7)
+            /*if (Stack1.Count > 7 || Stack2.Count > 7) //Deze even checken op het eind of die klopt.
             {
                 ValidMove = false;
                 MessageBox.Show("There is only place for 7 disks on each tower!");
             }*/
 
-            //Eventueel nog toevoegen.
-
-
-            for (int i = 0; i < Stacks.Length; i++)
+            if (MoveCoordinates.X >= panel4.Location.X && MoveCoordinates.X < panel5.Location.X)
             {
-                for (int x = 0; x < Stacks.Length; x++)
+                if (SelectCoordinates.X < panel4.Location.X)
                 {
-                    if (x != i)
+                    if (Stack2.Count > 0 && Stack1.Count > 0)
                     {
-                        try 
+                        if (Stack1.Peek() > Stack2.Peek())
                         {
-                            if(Stacks[x].Count != 0 && Stacks[i].Peek() > Stacks[x].Peek())
-                            {
-                                MessageBox.Show("Cannot place bigger disk on smaller disk!");
-                                ClickCount = 0;
-                                ValidMove = false;
-                                return;
-                            }                            
-                        }
-
-                        catch
-                        {
-
+                            MessageBox.Show("Cannot place bigger disk on smaller disk!");
+                            ClickCount = 0;
+                            ValidMove = false;
                         }
                     }
                 }
-            }                                 
+
+                else
+                {
+                    if (Stack2.Count > 0 && Stack3.Count > 0)
+                    {
+                        if (Stack3.Peek() > Stack2.Peek())
+                        {
+                            MessageBox.Show("Cannot place bigger disk on smaller disk!");
+                            ClickCount = 0;
+                            ValidMove = false;
+                        }
+                    }
+                }
+            }
+
+            if (MoveCoordinates.X < panel4.Location.X)
+            {
+                if (SelectCoordinates.X >= panel5.Location.X)
+                {
+                    if (Stack1.Count > 0 && Stack3.Count > 0)
+                    {
+                        if (Stack3.Peek() > Stack1.Peek())
+                        {
+                            MessageBox.Show("Cannot place bigger disk on smaller disk!");
+                            ClickCount = 0;
+                            ValidMove = false;
+                        }
+                    }
+                }
+
+                else
+                {
+                    if (Stack1.Count > 0 && Stack2.Count > 0)
+                    {
+                        if (Stack2.Peek() > Stack1.Peek())
+                        {
+                            MessageBox.Show("Cannot place bigger disk on smaller disk!");
+                            ClickCount = 0;
+                            ValidMove = false;
+                        }
+                    }
+                }
+            }
+
+            if (MoveCoordinates.X >= panel5.Location.X)
+            {
+                if (SelectCoordinates.X < panel5.Location.X && SelectCoordinates.X >= panel4.Location.X)
+                {
+                    if (Stack3.Count > 0 && Stack2.Count > 0)
+                    {
+                        if (Stack2.Peek() > Stack3.Peek())
+                        {
+                            MessageBox.Show("Cannot place bigger disk on smaller disk!");
+                            ClickCount = 0;
+                            ValidMove = false;
+                        }
+                    }
+                }
+
+                else
+                {
+                    if (Stack3.Count > 0 && Stack1.Count > 0)
+                    {
+                        if (Stack1.Peek() > Stack3.Peek())
+                        {
+                            MessageBox.Show("Cannot place bigger disk on smaller disk!");
+                            ClickCount = 0;
+                            ValidMove = false;
+                        }
+                    }
+                }    
+            }                         
         }
 
         void SelectDisk()
