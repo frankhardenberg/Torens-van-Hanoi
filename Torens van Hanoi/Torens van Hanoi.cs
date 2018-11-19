@@ -242,7 +242,7 @@ namespace Torens_van_Hanoi
 
             if (SelectCoordinates.X > panel4.Location.X && SelectCoordinates.X <= panel5.Location.X)
             {
-                if (Stack2.Count < 0)
+                if (Stack2.Count > 0)
                 {
                     Temp = Stack2.Pop();
                     StringStack2.Pop();
@@ -253,7 +253,7 @@ namespace Torens_van_Hanoi
 
             if (SelectCoordinates.X > panel5.Location.X)
             {
-                if (Stack3.Count < 0)
+                if (Stack3.Count > 0)
                 {
                     Temp = Stack3.Pop();
                     StringStack3.Pop();
