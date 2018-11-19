@@ -21,6 +21,9 @@ namespace Torens_van_Hanoi
         Stack<int> Stack1 = new Stack<int>();
         Stack<int> Stack2 = new Stack<int>();
         Stack<int> Stack3 = new Stack<int>();
+        Stack<string> StringStack1 = new Stack<string>();
+        Stack<string> StringStack2 = new Stack<string>();
+        Stack<string> StringStack3 = new Stack<string>();
         Stack<int>[] Stacks;
         bool ValidMove = true;
 
@@ -38,36 +41,43 @@ namespace Torens_van_Hanoi
             if (Disk7.Location.X <= 104)
             {
                 Stack1.Push(Convert.ToInt32(Disk7.Text));
+                StringStack1.Push("7");
             }
 
             if (Disk6.Location.X <= 104)
             {
                 Stack1.Push(Convert.ToInt32(Disk6.Text));
+                StringStack1.Push("6");
             }
 
             if (Disk5.Location.X <= 104)
             {
                 Stack1.Push(Convert.ToInt32(Disk5.Text));
+                StringStack1.Push("5");
             }
 
             if (Disk4.Location.X <= 104)
             {
                 Stack1.Push(Convert.ToInt32(Disk4.Text));
+                StringStack1.Push("4");
             }
 
             if (Disk3.Location.X <= 104)
             {
                 Stack1.Push(Convert.ToInt32(Disk3.Text));
+                StringStack1.Push("3");
             }
 
             if (Disk2.Location.X <= 104)
             {
                 Stack1.Push(Convert.ToInt32(Disk2.Text));
+                StringStack1.Push("2");
             }
 
             if (Disk1.Location.X <= 104)
             {
                 Stack1.Push(Convert.ToInt32(Disk1.Text));
+                StringStack1.Push("1");
             }
         }        
         
@@ -97,16 +107,16 @@ namespace Torens_van_Hanoi
 
             if (SelectCoordinates.X > panel4.Location.X && SelectCoordinates.X <= panel5.Location.X && Stack2.Count == 0)
             {
-                    MessageBox.Show("No disks available!");
-                    ValidMove = false;
-                    ClickCount = 0;                
+                MessageBox.Show("No disks available!");
+                ValidMove = false;
+                ClickCount = 0;                
             }
 
             if (SelectCoordinates.X > panel5.Location.X && Stack3.Count == 0)
             {
-                    MessageBox.Show("No disks available!");
-                    ValidMove = false;
-                    ClickCount = 0;
+                MessageBox.Show("No disks available!");
+                ValidMove = false;
+                ClickCount = 0;
             }
         }
 
@@ -117,20 +127,29 @@ namespace Torens_van_Hanoi
 
         void MoveValidation()
         {
-            if (Stack1.Count >= 0) //(Stack1.Count == 0 && MoveCoordinates.X < panel4.Location.X || Stack2.Count == 0 && MoveCoordinates.X >= panel4.Location.X && MoveCoordinates.X < panel5.Location.X || Stack3.Count == 0 && MoveCoordinates.X >= panel5.Location.X)
-            {
+            //if (Stack1.Count < 0) //(Stack1.Count == 0 && MoveCoordinates.X < panel4.Location.X || Stack2.Count == 0 && MoveCoordinates.X >= panel4.Location.X && MoveCoordinates.X < panel5.Location.X || Stack3.Count == 0 && MoveCoordinates.X >= panel5.Location.X)
+            //{
                 //Zorgen dat al het overige op true blijft staan.
-            }
+            //}
 
-            else
+            /*if (Stack1.Count > 7 || Stack2.Count > 7)
             {
-                for (int i = 0; i < Stacks.Length; i++)
+                ValidMove = false;
+                MessageBox.Show("There is only place for 7 disks on each tower!");
+            }*/
+
+            //Eventueel nog toevoegen.
+
+
+            for (int i = 0; i < Stacks.Length; i++)
+            {
+                for (int x = 0; x < Stacks.Length; x++)
                 {
-                    for (int x = 0; x < Stacks.Length; x++)
+                    if (x != i)
                     {
-                        if (x != i)
+                        try 
                         {
-                            if (Stacks[x].Count != 0 && Stacks[i].Peek() > Stacks[x].Peek())
+                            if(Stacks[x].Count != 0 && Stacks[i].Peek() > Stacks[x].Peek())
                             {
                                 MessageBox.Show("Cannot place bigger disk on smaller disk!");
                                 ClickCount = 0;
@@ -138,9 +157,14 @@ namespace Torens_van_Hanoi
                                 return;
                             }                            
                         }
+
+                        catch
+                        {
+
+                        }
                     }
                 }
-            }                      
+            }                                 
         }
 
         void SelectDisk()
@@ -156,7 +180,8 @@ namespace Torens_van_Hanoi
                 if (Stack1.Count > 0)
                 {
                     Temp = Stack1.Pop();
-                    //Console.WriteLine(Stack1.Count);
+                    StringStack1.Pop();
+                    //Console.Writeline(Stack1.Count);
                     UpdateStacks();
                 }
             }
@@ -166,6 +191,7 @@ namespace Torens_van_Hanoi
                 if (Stack2.Count < 0)
                 {
                     Temp = Stack2.Pop();
+                    StringStack2.Pop();
                     //Console.WriteLine(Stack2.Count);
                     UpdateStacks();
                 }
@@ -176,6 +202,7 @@ namespace Torens_van_Hanoi
                 if (Stack3.Count < 0)
                 {
                     Temp = Stack3.Pop();
+                    StringStack3.Pop();
                     //Console.WriteLine(Stack3.Count);
                     UpdateStacks();
                 }                                
@@ -233,6 +260,7 @@ namespace Torens_van_Hanoi
                     }                    
                     
                     Stack1.Push(Temp);
+                    StringStack1.Push(Temp.ToString());
                     //Console.WriteLine(Stack1.Count);
                     //UpdateStacks();
                     ClickCount = 0;
@@ -277,6 +305,7 @@ namespace Torens_van_Hanoi
                     }
                     
                     Stack2.Push(Temp);
+                    StringStack2.Push(Temp.ToString());
                     //Console.WriteLine(Stack2.Count);
                     //UpdateStacks();
                     ClickCount = 0;
@@ -321,6 +350,7 @@ namespace Torens_van_Hanoi
                     }                    
 
                     Stack3.Push(Temp);
+                    StringStack3.Push(Temp.ToString());
                     //Console.WriteLine(Stack3.Count);
                     //UpdateStacks();
                     ClickCount = 0;
