@@ -132,7 +132,6 @@ namespace Torens_van_Hanoi
                         {
                             MessageBox.Show("Cannot place bigger disk on smaller disk!");
                             ClickCount = 0;
-                            ValidMove = false;
                         }
                     }
                 }
@@ -145,7 +144,6 @@ namespace Torens_van_Hanoi
                         {
                             MessageBox.Show("Cannot place bigger disk on smaller disk!");
                             ClickCount = 0;
-                            ValidMove = false;
                         }
                     }
                 }
@@ -161,7 +159,6 @@ namespace Torens_van_Hanoi
                         {
                             MessageBox.Show("Cannot place bigger disk on smaller disk!");
                             ClickCount = 0;
-                            ValidMove = false;
                         }
                     }
                 }
@@ -174,7 +171,6 @@ namespace Torens_van_Hanoi
                         {
                             MessageBox.Show("Cannot place bigger disk on smaller disk!");
                             ClickCount = 0;
-                            ValidMove = false;
                         }
                     }
                 }
@@ -189,8 +185,7 @@ namespace Torens_van_Hanoi
                         if (Stack2.Peek() > Stack3.Peek())
                         {
                             MessageBox.Show("Cannot place bigger disk on smaller disk!");
-                            ClickCount = 0;
-                            ValidMove = false;                            
+                            ClickCount = 0;                           
                         }
                     }
                 }
@@ -203,7 +198,6 @@ namespace Torens_van_Hanoi
                         {
                             MessageBox.Show("Cannot place bigger disk on smaller disk!");
                             ClickCount = 0;
-                            ValidMove = false;
                         }
                     }
                 }    
