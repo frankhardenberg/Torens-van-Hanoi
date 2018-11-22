@@ -77,6 +77,7 @@ namespace Torens_van_Hanoi
 
             if (ClickCount == 0)
             {
+                ValidMove = true;
                 SelectDisk();
             }
 
@@ -92,21 +93,22 @@ namespace Torens_van_Hanoi
             {
                 MessageBox.Show("No disks available!");
                 ClickCount = -1;
+                ValidMove = false;
             }
 
             if (SelectCoordinates.X > panel4.Location.X && SelectCoordinates.X <= panel5.Location.X && Stack2.Count == 0)
             {
                 MessageBox.Show("No disks available!");
-                ClickCount = -1;                
+                ClickCount = -1;
+                ValidMove = false;
             }
 
             if (SelectCoordinates.X > panel5.Location.X && Stack3.Count == 0)
             {
                 MessageBox.Show("No disks available!");
                 ClickCount = -1;
+                ValidMove = false;
             }
-
-            UpdateStacks();
         }
 
         void UpdateStacks()
@@ -133,6 +135,7 @@ namespace Torens_van_Hanoi
                             MessageBox.Show("Cannot place bigger disk on smaller disk!");
                             ClickCount = 0;
                             ValidMove = false;
+                            Stack3.Push(Temp);
                         }
                     }
                 }
@@ -146,6 +149,7 @@ namespace Torens_van_Hanoi
                             MessageBox.Show("Cannot place bigger disk on smaller disk!");
                             ClickCount = 0;
                             ValidMove = false;
+                            Stack3.Push(Temp);
                         }
                     }
                 }
@@ -162,6 +166,7 @@ namespace Torens_van_Hanoi
                             MessageBox.Show("Cannot place bigger disk on smaller disk!");
                             ClickCount = 0;
                             ValidMove = false;
+                            Stack1.Push(Temp);
                         }
                     }
                 }
@@ -175,6 +180,7 @@ namespace Torens_van_Hanoi
                             MessageBox.Show("Cannot place bigger disk on smaller disk!");
                             ClickCount = 0;
                             ValidMove = false;
+                            Stack1.Push(Temp);
                         }
                     }
                 }
@@ -191,6 +197,7 @@ namespace Torens_van_Hanoi
                             MessageBox.Show("Cannot place bigger disk on smaller disk!");
                             ClickCount = 0;
                             ValidMove = false;
+                            Stack2.Push(Temp);
                         }
                     }
                 }
@@ -204,12 +211,13 @@ namespace Torens_van_Hanoi
                             MessageBox.Show("Cannot place bigger disk on smaller disk!");
                             ClickCount = 0;
                             ValidMove = false;
+                            Stack2.Push(Temp);
                         }
                     }
                 }    
             }
 
-            UpdateStacks(); //Is dit wel nodig?
+            UpdateStacks();
         }
 
         void SelectDisk()
@@ -256,7 +264,7 @@ namespace Torens_van_Hanoi
             MoveCoordinates = Coordinates;
             MoveValidation();
 
-            if (ValidMove == true)
+            if (ValidMove == true && ClickCount != 0)
             {
                 ++Count;
                 MoveCounter.Text = "Moves: " + Count.ToString();
