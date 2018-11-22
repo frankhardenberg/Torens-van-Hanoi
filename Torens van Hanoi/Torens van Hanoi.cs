@@ -118,12 +118,6 @@ namespace Torens_van_Hanoi
 
         void MoveValidation()
         {
-            if (Stack1.Count > 7 || Stack2.Count > 7) //Deze even checken op het eind of die klopt.
-            {
-                ValidMove = false;
-                MessageBox.Show("There is only place for 7 disks on each tower!");
-            }
-
             if (MoveCoordinates.X < panel4.Location.X)
             {
                 if (SelectCoordinates.X >= panel5.Location.X)
