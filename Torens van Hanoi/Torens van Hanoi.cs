@@ -91,23 +91,22 @@ namespace Torens_van_Hanoi
             if (SelectCoordinates.X <= panel4.Location.X && Stack1.Count == 0)
             {
                 MessageBox.Show("No disks available!");
-                ValidMove = false;
-                ClickCount = 0;
+                ClickCount = -1;
             }
 
             if (SelectCoordinates.X > panel4.Location.X && SelectCoordinates.X <= panel5.Location.X && Stack2.Count == 0)
             {
                 MessageBox.Show("No disks available!");
-                ValidMove = false;
-                ClickCount = 0;                
+                ClickCount = -1;                
             }
 
             if (SelectCoordinates.X > panel5.Location.X && Stack3.Count == 0)
             {
                 MessageBox.Show("No disks available!");
-                ValidMove = false;
-                ClickCount = 0;
+                ClickCount = -1;
             }
+
+            UpdateStacks();
         }
 
         void UpdateStacks()
@@ -191,8 +190,7 @@ namespace Torens_van_Hanoi
                         {
                             MessageBox.Show("Cannot place bigger disk on smaller disk!");
                             ClickCount = 0;
-                            ValidMove = false;
-                            SelectDisk();
+                            ValidMove = false;                            
                         }
                     }
                 }
@@ -206,11 +204,12 @@ namespace Torens_van_Hanoi
                             MessageBox.Show("Cannot place bigger disk on smaller disk!");
                             ClickCount = 0;
                             ValidMove = false;
-                            SelectDisk();
                         }
                     }
                 }    
-            }                         
+            }
+
+            UpdateStacks();
         }
 
         void SelectDisk()
@@ -389,7 +388,9 @@ namespace Torens_van_Hanoi
             if (Stack3.Count == 7)
             {
                 MessageBox.Show("Congratulations! You won!");
-            }
+            }            
         }        
     }
 }
+// Als no disks available melding is geweest gaat die geen buttons meer verplaatsen.
+// Soms bij de middelste panel geeft die onterecht cannot place bigger disk on smaller disk en verplaatst die ook geen buttons meer.
