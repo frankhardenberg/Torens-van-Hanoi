@@ -260,41 +260,44 @@ namespace Torens_van_Hanoi
 
             if (ValidMove == true && ClickCount != 0)
             {
-                ++Count;
-                MoveCounter.Text = "Moves: " + Count.ToString();
+                if(MoveCoordinates.X != SelectCoordinates.X)
+                { 
+                    ++Count;
+                    MoveCounter.Text = "Moves: " + Count.ToString();
 
-                if (MoveCoordinates.X <= panel4.Location.X)
-                {
-                    int Height = 185 - (Stack1.Count * 24);
-                    int Width = 113 - (Temp * 9);
-
-                    for (int i = 0; i < 8; i++)
+                    if (MoveCoordinates.X <= panel4.Location.X)
                     {
-                        if (Stack1.Count == i)
+                        int Height = 185 - (Stack1.Count * 24);
+                        int Width = 113 - (Temp * 9);
+
+                        for (int i = 0; i < 8; i++)
                         {
-                            switch (Temp)
+                            if (Stack1.Count == i)
                             {
-                                case 1:
-                                    Disk1.Location = new Point(Width, Height);
-                                    break;
-                                case 2:
-                                    Disk2.Location = new Point(Width, Height);
-                                    break;
-                                case 3:
-                                    Disk3.Location = new Point(Width, Height);
-                                    break;
-                                case 4:
-                                    Disk4.Location = new Point(Width, Height);
-                                    break;
-                                case 5:
-                                    Disk5.Location = new Point(Width, Height);
-                                    break;
-                                case 6:
-                                    Disk6.Location = new Point(Width, Height);
-                                    break;
-                                case 7:
-                                    Disk7.Location = new Point(Width, Height);
-                                    break;
+                                switch (Temp)
+                                {
+                                    case 1:
+                                        Disk1.Location = new Point(Width, Height);
+                                        break;
+                                    case 2:
+                                        Disk2.Location = new Point(Width, Height);
+                                        break;
+                                    case 3:
+                                        Disk3.Location = new Point(Width, Height);
+                                        break;
+                                    case 4:
+                                        Disk4.Location = new Point(Width, Height);
+                                        break;
+                                    case 5:
+                                        Disk5.Location = new Point(Width, Height);
+                                        break;
+                                    case 6:
+                                        Disk6.Location = new Point(Width, Height);
+                                        break;
+                                    case 7:
+                                        Disk7.Location = new Point(Width, Height);
+                                        break;
+                                }
                             }
                         }
                     }
