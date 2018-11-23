@@ -260,44 +260,38 @@ namespace Torens_van_Hanoi
 
             if (ValidMove == true && ClickCount != 0)
             {
-                if(MoveCoordinates.X != SelectCoordinates.X)
-                { 
-                    ++Count;
-                    MoveCounter.Text = "Moves: " + Count.ToString();
+                if (MoveCoordinates.X <= panel4.Location.X && ValidMove == true)
+                {
+                    int Height = 185 - (Stack1.Count * 24);
+                    int Width = 113 - (Temp * 9);
 
-                    if (MoveCoordinates.X <= panel4.Location.X)
+                    for (int i = 0; i < 8; i++)
                     {
-                        int Height = 185 - (Stack1.Count * 24);
-                        int Width = 113 - (Temp * 9);
-
-                        for (int i = 0; i < 8; i++)
+                        if (Stack1.Count == i)
                         {
-                            if (Stack1.Count == i)
+                            switch (Temp)
                             {
-                                switch (Temp)
-                                {
-                                    case 1:
-                                        Disk1.Location = new Point(Width, Height);
-                                        break;
-                                    case 2:
-                                        Disk2.Location = new Point(Width, Height);
-                                        break;
-                                    case 3:
-                                        Disk3.Location = new Point(Width, Height);
-                                        break;
-                                    case 4:
-                                        Disk4.Location = new Point(Width, Height);
-                                        break;
-                                    case 5:
-                                        Disk5.Location = new Point(Width, Height);
-                                        break;
-                                    case 6:
-                                        Disk6.Location = new Point(Width, Height);
-                                        break;
-                                    case 7:
-                                        Disk7.Location = new Point(Width, Height);
-                                        break;
-                                }
+                                case 1:
+                                    Disk1.Location = new Point(Width, Height);
+                                    break;
+                                case 2:
+                                    Disk2.Location = new Point(Width, Height);
+                                    break;
+                                case 3:
+                                    Disk3.Location = new Point(Width, Height);
+                                    break;
+                                case 4:
+                                    Disk4.Location = new Point(Width, Height);
+                                    break;
+                                case 5:
+                                    Disk5.Location = new Point(Width, Height);
+                                    break;
+                                case 6:
+                                    Disk6.Location = new Point(Width, Height);
+                                    break;
+                                case 7:
+                                    Disk7.Location = new Point(Width, Height);
+                                    break;
                             }
                         }
                     }
@@ -307,7 +301,8 @@ namespace Torens_van_Hanoi
                     ClickCount = 0;
                 }
 
-                if (MoveCoordinates.X > panel4.Location.X && MoveCoordinates.X <= panel5.Location.X)
+
+                if (MoveCoordinates.X > panel4.Location.X && MoveCoordinates.X <= panel5.Location.X && ValidMove == true)
                 {
                     int Height = 185 - (Stack2.Count * 24);
                     int Width = 301 - (Temp * 9);
@@ -342,13 +337,13 @@ namespace Torens_van_Hanoi
                             }
                         }
                     }
-                    
+
                     Stack2.Push(Temp);
                     UpdateStacks();
                     ClickCount = 0;
                 }
 
-                if (MoveCoordinates.X > panel5.Location.X)
+                if (MoveCoordinates.X > panel5.Location.X && ValidMove == true)
                 {
                     int Height = 185 - (Stack3.Count * 24);
                     int Width = 489 - (Temp * 9);
@@ -360,7 +355,7 @@ namespace Torens_van_Hanoi
                             switch (Temp)
                             {
                                 case 1:
-                                    Disk1.Location = new Point(Width, Height);                                                                      
+                                    Disk1.Location = new Point(Width, Height);
                                     break;
                                 case 2:
                                     Disk2.Location = new Point(Width, Height);
@@ -383,17 +378,40 @@ namespace Torens_van_Hanoi
                             }
                         }
                     }
-                    
+
                     Stack3.Push(Temp);
                     UpdateStacks();
                     ClickCount = 0;
                 }
-            }
 
-            if (Stack3.Count == 7)
-            {
-                MessageBox.Show("Congratulations! You won!");
-            }            
+                bool CountChecker = false;
+
+                if (MoveCoordinates.X <= panel4.Location.X && SelectCoordinates.X > panel4.Location.X)
+                {
+                    CountChecker = true;
+                }
+
+                if (MoveCoordinates.X > panel5.Location.X && SelectCoordinates.X <= panel5.Location.X)
+                {
+                    CountChecker = true;
+                }
+
+                if (MoveCoordinates.X > panel4.Location.X && MoveCoordinates.X <= panel5.Location.X && SelectCoordinates.X <= panel4.Location.X || MoveCoordinates.X > panel4.Location.X && MoveCoordinates.X <= panel5.Location.X && SelectCoordinates.X > panel5.Location.X)
+                {
+                    CountChecker = true;
+                }
+
+                if (CountChecker == true)
+                {
+                    ++Count;
+                    MoveCounter.Text = "Moves: " + Count.ToString();
+                }
+
+                if (Stack3.Count == 7)
+                {
+                    MessageBox.Show("Congratulations! You won!");
+                }
+            }
         }        
     }
 }

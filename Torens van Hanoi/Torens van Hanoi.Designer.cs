@@ -409,10 +409,10 @@
             this.Controls.Add(this.Disk5);
             this.Controls.Add(this.Disk3);
             this.Controls.Add(this.Disk1);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.Disk2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TorensvanHanoi";
             this.Text = "Torens van Hanoi";
