@@ -143,7 +143,7 @@ namespace Torens_van_Hanoi
                             MessageBox.Show("Cannot place bigger disk on smaller disk!");
                             ClickCount = 0;
                             ValidMove = false;
-                            Stack3.Push(Temp);
+                            Stack2.Push(Temp);
                         }
                     }
                 }
@@ -174,7 +174,7 @@ namespace Torens_van_Hanoi
                             MessageBox.Show("Cannot place bigger disk on smaller disk!");
                             ClickCount = 0;
                             ValidMove = false;
-                            Stack1.Push(Temp);
+                            Stack3.Push(Temp);
                         }
                     }
                 }
@@ -205,7 +205,7 @@ namespace Torens_van_Hanoi
                             MessageBox.Show("Cannot place bigger disk on smaller disk!");
                             ClickCount = 0;
                             ValidMove = false;
-                            Stack2.Push(Temp);
+                            Stack1.Push(Temp);
                         }
                     }
                 }    
@@ -226,7 +226,6 @@ namespace Torens_van_Hanoi
                 if (Stack1.Count > 0)
                 {
                     Temp = Stack1.Pop();
-                    UpdateStacks();
                 }
             }
 
@@ -235,7 +234,6 @@ namespace Torens_van_Hanoi
                 if (Stack2.Count > 0)
                 {
                     Temp = Stack2.Pop();
-                    UpdateStacks();
                 }
             }
 
@@ -244,7 +242,6 @@ namespace Torens_van_Hanoi
                 if (Stack3.Count > 0)
                 {
                     Temp = Stack3.Pop();
-                    UpdateStacks();
                 }                                
             }
 
@@ -295,7 +292,7 @@ namespace Torens_van_Hanoi
                             }
                         }
                     }
-
+                    
                     Stack1.Push(Temp);
                     UpdateStacks();
                     ClickCount = 0;
@@ -337,7 +334,7 @@ namespace Torens_van_Hanoi
                             }
                         }
                     }
-
+                    
                     Stack2.Push(Temp);
                     UpdateStacks();
                     ClickCount = 0;
@@ -378,7 +375,7 @@ namespace Torens_van_Hanoi
                             }
                         }
                     }
-
+                    
                     Stack3.Push(Temp);
                     UpdateStacks();
                     ClickCount = 0;
